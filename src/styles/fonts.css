@@ -1,8 +1,7 @@
-/* @font-face {
-    font-family: 'Sentinel';
-    src: url('/assets/fonts/Sentinel-Medium.woff2') format('woff2');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-  }
-   */
+@font-face {
+  font-family: 'GFSHomie';
+  src: url('../assets/fonts/GFSHomie-1400gsm.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}

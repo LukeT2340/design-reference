@@ -58,3 +58,11 @@ export interface AnimateTextProps {
 export type Slide = {
   image: string;
 };
+
+export type Block = {
+  text: string;
+  backgroundImage: string;
+  textColor: string;
+  ref: RefObject<HTMLDivElement>;
+  headerBlockColor: string;
+};

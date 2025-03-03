@@ -30,14 +30,33 @@
     box-sizing: inherit;
   }
 
+  :root {
+    --background-color: #193f1a;
+    --text-color: #f68d2e;
+  }
+
   /**
    * Basic typography style for copy text
    */
   body {
-    font-family: 'ProximaNova', Arial, Helvetica, sans-serif;
-    font-size: 1.6rem;
+    font-family: 'GFSHomie', Arial, Helvetica, sans-serif;
+    font-size: 11rem;
     font-weight: normal;
-    line-height: 2em;
+    line-height: 10.4rem;
+    text-transform: uppercase;
     text-wrap: pretty;
+  }
+
+  .hero {
+    background-color: var(--background-color);
+    transition: background-color 0.5s cubic-bezier(0.73, 0.09, 0.6, 1.01);
+  }
+
+  .link {
+    background-color: var(--text-color);
+    color: var(--background-color);
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
   }
 }
