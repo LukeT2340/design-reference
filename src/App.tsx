@@ -1,6 +1,8 @@
 import { useRef } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import LocomotiveParallax from './js/parallax';
-import Hero from './components/blocks/Hero';
+import Home from './components/blocks/Home';
+import Explore from './components/blocks/Explore';
 
 const App = () => {
   const locoScrollRef = useRef<HTMLElement>(null);
@@ -10,7 +12,12 @@ const App = () => {
       <main>
         <article>
           <LocomotiveParallax locoScrollRef={locoScrollRef}>
-            <Hero />
+            <BrowserRouter>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/explore" element={<Explore />} />
+              </Routes>
+            </BrowserRouter>
           </LocomotiveParallax>
         </article>
       </main>

@@ -66,3 +66,10 @@ export type Block = {
   ref: RefObject<HTMLDivElement>;
   headerBlockColor: string;
 };
+
+export type Card = {
+  image: string;
+  title: string;
+  href: string;
+  category: string;
+};

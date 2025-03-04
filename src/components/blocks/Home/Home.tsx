@@ -10,7 +10,7 @@ import Sheet from '../../miscellaneous/Sheet';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Hero: React.FC = () => {
+const Home: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const semiCircleRef = useRef<SVGSVGElement>(null);
@@ -95,7 +95,8 @@ const Hero: React.FC = () => {
 
   return (
     <section className="hero relative" ref={sectionRef}>
-      <div className="fixed top-[30vh] z-20 w-full">
+      {/* Header Block */}
+      <div className="header-block fixed top-[30vh] z-20 w-full">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           preserveAspectRatio="none"
@@ -111,20 +112,24 @@ const Hero: React.FC = () => {
       </div>
       <div className="header h-[30vh]">
         <div
-          className="fixed top-[50px] right-[calc(50vw-700px)] flex items-center justify-center gap-[10px] text-[2rem] leading-[2rem]"
+          className="fixed top-[50px] right-[calc(50vw-700px)] flex items-center justify-center gap-[10px]"
           ref={headerRef}
         >
           <div className="link flex h-[48px] items-center justify-center px-5">
-            <h1>SHOP</h1>
+            <h2>SHOP</h2>
           </div>
-          <div className="link flex h-[48px] items-center justify-center px-5">
-            <h1>EXPLORE</h1>
-          </div>
+          <a
+            href="/explore"
+            className="link flex h-[48px] items-center justify-center px-5"
+          >
+            <h2>EXPLORE</h2>
+          </a>
           <div className="link flex h-[48px] items-center justify-center px-9" />
         </div>
       </div>
+
+      {/* Sheets */}
       <div className="wrapper" ref={containerRef}>
-        {/* Sheets */}
         {blocks.map((block, index) => (
           <Sheet
             key={index}
@@ -141,4 +146,4 @@ const Hero: React.FC = () => {
   );
 };
 
-export default Hero;
+export default Home;
