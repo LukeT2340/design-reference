@@ -26,14 +26,14 @@ const ArticleCard: React.FC<Props> = ({ card }) => {
 
 const ReadIcon = () => {
   return (
-    <div className="absolute right-0 bottom-10 h-[150px] w-[150px] overflow-hidden transition-all duration-500 group-hover:-rotate-45">
+    <div className="absolute right-10 bottom-10 h-[150px] w-[80px] overflow-hidden">
       <svg
         width="24"
         height="24"
         viewBox="0 0 124 124"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="ml-auto h-full w-full"
+        className="h-full w-[150px] -translate-x-[110px] transition-all delay-[100ms] duration-700 ease-[var(--ease-func)] group-hover:-translate-x-[70px]"
       >
         <defs>
           <path
@@ -48,30 +48,37 @@ const ReadIcon = () => {
             stroke-width="2"
           ></path>
         </defs>
-        <g className="-translate-x-[90px] transition-all delay-100 duration-500 ease-in-out group-hover:translate-x-0 group-hover:delay-250">
-          <text fill="white" font-size="30px" baseline-shift="0" dy="0.27em">
+        <g className="origin-center delay-[100ms] duration-700 ease-[var(--ease-func)] group-hover:-rotate-90 group-hover:delay-[400ms]">
+          <text fill="white" font-size="30px" baseline-shift="0" dy="0.3em">
             <textPath href="#The-Munken-Agenda-2025-path" startOffset="0%">
               R
+              <animate
+                attributeName="startOffset"
+                values="0%;10%"
+                dur="0.5s"
+                begin="mouseenter"
+                fill="freeze"
+              />
             </textPath>
           </text>
         </g>
-        <g className="-translate-x-[90px] transition-all delay-150 duration-500 ease-in-out group-hover:translate-x-0 group-hover:delay-200">
-          <text fill="white" font-size="30px" baseline-shift="0" dy="0.27em">
-            <textPath href="#The-Munken-Agenda-2025-path" startOffset="8%">
+        <g className="origin-center delay-[200ms] duration-700 ease-[var(--ease-func)] group-hover:-rotate-90 group-hover:delay-[300ms]">
+          <text fill="white" font-size="30px" baseline-shift="0" dy="0.3em">
+            <textPath href="#The-Munken-Agenda-2025-path" startOffset="9%">
               E
             </textPath>
           </text>
         </g>
-        <g className="-translate-x-[90px] transition-all delay-200 duration-500 ease-in-out group-hover:translate-x-0 group-hover:delay-150">
-          <text fill="white" font-size="30px" baseline-shift="0" dy="0.27em">
-            <textPath href="#The-Munken-Agenda-2025-path" startOffset="15%">
+        <g className="origin-center delay-[300ms] duration-700 ease-[var(--ease-func)] group-hover:-rotate-90 group-hover:delay-[200ms]">
+          <text fill="white" font-size="30px" baseline-shift="0" dy="0.3em">
+            <textPath href="#The-Munken-Agenda-2025-path" startOffset="16%">
               A
             </textPath>
           </text>
         </g>
-        <g className="-translate-x-[90px] transition-all delay-250 duration-500 ease-in-out group-hover:translate-x-0 group-hover:delay-100">
-          <text fill="white" font-size="30px" baseline-shift="9%" dy="0.27em">
-            <textPath href="#The-Munken-Agenda-2025-path" startOffset="23%">
+        <g className="origin-center delay-[400ms] duration-700 ease-[var(--ease-func)] group-hover:-rotate-90 group-hover:delay-[100ms]">
+          <text fill="white" font-size="30px" baseline-shift="9%" dy="0.3em">
+            <textPath href="#The-Munken-Agenda-2025-path" startOffset="25%">
               D
             </textPath>
           </text>

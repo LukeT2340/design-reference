@@ -13,6 +13,10 @@
 }
 
 @layer base {
+  :root {
+    --ease-func: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
   html {
     box-sizing: border-box;
     font-size: 10px;
@@ -99,5 +103,25 @@
 
   text {
     font-family: 'GFSHomie', Arial, Helvetica, sans-serif;
+    font-weight: 700;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0px);
+    }
+    100% {
+      transform: translateX(-5000px);
+    }
+  }
+
+  .marquee-text {
+    font-size: 11rem;
+    line-height: 9.5rem;
+    font-family: 'GFSHomie', Arial, Helvetica, sans-serif;
+    display: inline-block;
+    font-weight: 700;
+
+    animation: marquee 20s linear infinite;
   }
 }

@@ -13,9 +13,7 @@ gsap.registerPlugin(ScrollTrigger);
 const Home: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const semiCircleRef = useRef<SVGSVGElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
-  const bufferRef = useRef<HTMLDivElement>(null);
   const blocks: Block[] = [
     {
       text: 'With every sheet of paper, feel the difference.',
@@ -76,18 +74,6 @@ const Home: React.FC = () => {
       });
     });
 
-    ScrollTrigger.create({
-      trigger: bufferRef.current,
-      start: 'top bottom',
-      end: 'bottom bottom',
-      onUpdate: (self) => {
-        const semiCircle = semiCircleRef.current;
-        if (!semiCircle) return;
-        const progress = self.progress ** 2;
-        semiCircle.style.transform = `scaleY(${progress})`;
-      },
-    });
-
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
@@ -96,23 +82,9 @@ const Home: React.FC = () => {
   return (
     <section className="hero relative" ref={sectionRef}>
       {/* Header Block */}
-      <div className="header-block fixed top-[30vh] z-20 w-full">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="none"
-          viewBox="0 0 1000 100"
-          ref={semiCircleRef}
-          style={{ transform: 'scaleY(0)', transformOrigin: 'top' }}
-        >
-          <path
-            d="M0 0v4s250 96 500 96 500-96 500-96V0H0Z"
-            fill="#0050d5"
-          ></path>
-        </svg>
-      </div>
-      <div className="header h-[30vh]">
+      <div className="header relative z-30 h-[30vh]">
         <div
-          className="fixed top-[50px] right-[calc(50vw-700px)] flex items-center justify-center gap-[10px]"
+          className="fixed top-[50px] right-[calc(50vw-650px)] flex items-center justify-center gap-[10px]"
           ref={headerRef}
         >
           <div className="link flex h-[48px] items-center justify-center px-5">
@@ -128,8 +100,8 @@ const Home: React.FC = () => {
         </div>
       </div>
 
-      {/* Sheets */}
-      <div className="wrapper" ref={containerRef}>
+      {/* Block One */}
+      <div className="wrapper relative" ref={containerRef}>
         {blocks.map((block, index) => (
           <Sheet
             key={index}
@@ -138,9 +110,18 @@ const Home: React.FC = () => {
             totalBlocks={blocks.length}
           />
         ))}
-
         {/* Buffer for clip path animation */}
-        <div className="buffer h-[100vh]" ref={bufferRef} />
+        <div className="buffer h-[100vh]" />
+      </div>
+
+      {/* Block Two */}
+      <div className="relative z-40 h-screen bg-[#c5ff21] py-[200px]">
+        <a
+          className="absolute top-[20%] left-1/2 -translate-x-1/2 text-[3rem] text-[#0050d5] underline"
+          href="/explore"
+        >
+          Explore
+        </a>
       </div>
     </section>
   );
