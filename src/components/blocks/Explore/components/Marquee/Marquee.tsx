@@ -1,3 +1,5 @@
+import './styles.css';
+
 interface Props {
   text: string;
   color?: string;
@@ -14,7 +16,7 @@ const Marquee: React.FC<Props> = ({
   const marqueeText = Array(100).fill(text.toUpperCase());
   console.log(marqueeText);
   return (
-    <div style={{ zIndex, color, whiteSpace: 'nowrap' }} className={className}>
+    <div style={{ zIndex, color }} className={`${className} text-nowrap`}>
       {marqueeText.map((text, index) => (
         <span key={index} className="marquee-text mr-[50px]">
           {text}

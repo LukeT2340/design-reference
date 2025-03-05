@@ -6,7 +6,7 @@ import imageFour from '../../../assets/images/common/card-4.webp';
 import imageFive from '../../../assets/images/common/card-5.webp';
 import imageSix from '../../../assets/images/common/card-6.webp';
 import ArticleCard from '../../miscellaneous/ArticleCard';
-import Marquee from '../../miscellaneous/Marquee';
+import Marquee from './components/Marquee/Marquee';
 
 const Explore: React.FC = () => {
   const cards: Card[] = [
@@ -91,7 +91,7 @@ const Explore: React.FC = () => {
       {/* Block Two */}
       <div className="block-two mx-auto grid max-w-[1360px] grid-cols-3 items-stretch gap-[32px]">
         {cards.map((card) => (
-          <ArticleCard card={card} key={card.title} />
+          <ArticleCard card={card} key={card.title} bgColor="#e10600" />
         ))}
       </div>
     </section>

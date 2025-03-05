@@ -3,9 +3,10 @@ import { Card } from '../../types';
 
 interface Props {
   card: Card;
+  bgColor?: string;
 }
 
-const ArticleCard: React.FC<Props> = ({ card }) => {
+const ArticleCard: React.FC<Props> = ({ card, bgColor = '#ffffff' }) => {
   const { href, image, title, category } = card;
 
   return (
@@ -15,7 +16,10 @@ const ArticleCard: React.FC<Props> = ({ card }) => {
         alt={title}
         className="aspect-[4/3] h-[60%] w-full object-cover transition-all duration-500 ease-in-out group-hover:h-[52%] group-hover:scale-105"
       />
-      <div className="bg-red relative flex h-[40%] w-full flex-col justify-between p-[16px] text-white transition-all duration-500 ease-in-out group-hover:h-[48%]">
+      <div
+        style={{ background: bgColor }}
+        className="relative flex h-[40%] w-full flex-col justify-between p-[16px] text-white transition-all duration-500 ease-in-out group-hover:h-[48%]"
+      >
         <h5 className="mb-[28px] max-w-[75%]">{title}</h5>
         <p>{category}</p>
       </div>
@@ -26,7 +30,10 @@ const ArticleCard: React.FC<Props> = ({ card }) => {
 
 const ReadIcon = () => {
   return (
-    <div className="absolute right-10 bottom-10 h-[150px] w-[80px] overflow-hidden">
+    <div
+      className="absolute right-10 bottom-10 h-[150px] w-[80px] overflow-hidden font-bold"
+      style={{ fontFamily: 'GFSHomie' }}
+    >
       <svg
         width="24"
         height="24"
