@@ -25,8 +25,6 @@ const TextHoverAnim: React.FC<Props> = ({
           {
             color: color,
             '--hover-color': hoverColor,
-            '--y-initial': '-150px',
-            '--y-final': '-50%',
           } as React.CSSProperties
         }
       >

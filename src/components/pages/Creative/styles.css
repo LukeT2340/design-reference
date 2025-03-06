@@ -10,6 +10,8 @@
   font-family: 'Greed';
   font-weight: 900;
   font-size: 13.5rem;
+  --y-initial: -150px;
+  --y-final: -50%;
 }
 
 span {
