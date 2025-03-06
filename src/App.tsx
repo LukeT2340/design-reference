@@ -3,7 +3,7 @@ import gsap from 'gsap/all';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import LocomotiveParallax from './js/parallax';
-import NavBar from './components/NavBar';
+import NavBar from './NavBar';
 import Cards from './pages/Cards';
 import Slides from './pages/Slides';
 import Parallax from './pages/Parallax';
