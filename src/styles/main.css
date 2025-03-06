@@ -36,11 +36,6 @@
     box-sizing: inherit;
   }
 
-  :root {
-    --background-color: #193f1a;
-    --text-color: #f68d2e;
-  }
-
   /**
    * Basic typography style for copy text
    */
@@ -63,41 +58,5 @@
     transition:
       background-color 0.5s cubic-bezier(0.73, 0.09, 0.6, 1.01),
       color 0.5s cubic-bezier(0.73, 0.09, 0.6, 1.01);
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: 'GFSHomie', Arial, Helvetica, sans-serif;
-  }
-
-  p {
-    padding-bottom: 0;
-  }
-
-  h1 {
-    font-size: 11rem;
-    line-height: 10.4rem;
-    text-transform: uppercase;
-    font-weight: 700;
-  }
-
-  h2 {
-    font-size: 2rem;
-    line-height: 2rem;
-    font-weight: 700;
-  }
-
-  h5 {
-    font-size: 3rem;
-    line-height: 3.6rem;
-  }
-
-  h6 {
-    font-size: 1.6rem;
-    line-height: 2.44rem;
   }
 }

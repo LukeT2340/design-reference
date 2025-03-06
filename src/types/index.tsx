@@ -1,4 +1,4 @@
-import { RefObject } from 'react';
+import { ReactNode, RefObject } from 'react';
 import { ILocomotiveScrollOptions } from 'locomotive-scroll';
 
 export type ImageProps = {
@@ -59,17 +59,15 @@ export type Slide = {
   image: string;
 };
 
-export type Block = {
-  text: string;
-  backgroundImage: string;
-  textColor: string;
-  ref: RefObject<HTMLDivElement>;
-  headerBlockColor: string;
-};
-
-export type Card = {
-  image: string;
-  title: string;
-  href: string;
-  category: string;
+export type Layer = {
+  image?: string;
+  copy?: ReactNode;
+  depth: number;
+  position?: {
+    currentX: number;
+    currentY: number;
+    targetX: number;
+    targetY: number;
+  };
+  ref?: RefObject<HTMLImageElement>;
 };
