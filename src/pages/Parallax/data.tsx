@@ -132,10 +132,10 @@ export const layersFour: Layer[] = [
   },
   {
     image: nt2,
-    depth: 0.5,
+    depth: 0.6,
   },
   {
     image: nt3,
-    depth: 0.6,
+    depth: 0.7,
   },
 ];
