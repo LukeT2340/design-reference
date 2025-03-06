@@ -5,8 +5,8 @@ import imageThree from '../../../assets/images/common/card-3.webp';
 import imageFour from '../../../assets/images/common/card-4.webp';
 import imageFive from '../../../assets/images/common/card-5.webp';
 import imageSix from '../../../assets/images/common/card-6.webp';
-import ArticleCard from '../../miscellaneous/ArticleCard';
-import Marquee from './components/Marquee/Marquee';
+import Marquee from './components/Marquee';
+import ArticleCard from './components/ArticleCard';
 
 const Explore: React.FC = () => {
   const cards: Card[] = [

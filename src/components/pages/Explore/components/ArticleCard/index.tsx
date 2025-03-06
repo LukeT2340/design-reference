@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { Card } from '../../types';
+import { Card } from '../../../../../types';
 
 interface Props {
   card: Card;
