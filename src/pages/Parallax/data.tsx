@@ -62,7 +62,7 @@ export const layersTwo: Layer[] = [
   },
   {
     copy: (
-      <h1 className="mb-[100px] text-[8rem] font-bold text-black">
+      <h1 className="mb-[100px] text-[8rem] font-bold text-nowrap text-black">
         Hello, World!
       </h1>
     ),

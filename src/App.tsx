@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import gsap from 'gsap/all';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import LocomotiveParallax from './js/parallax';
 import NavBar from './NavBar';
 import Cards from './pages/Cards';
@@ -26,6 +26,7 @@ const App = () => {
                 <Route path="/cards" element={<Cards />} />
                 <Route path="/text-hover" element={<TextHover />} />
                 <Route path="/parallax" element={<Parallax />} />
+                <Route path="*" element={<Navigate to="/slides" />} />
               </Routes>
             </BrowserRouter>
           </LocomotiveParallax>

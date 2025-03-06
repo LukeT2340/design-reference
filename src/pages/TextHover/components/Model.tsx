@@ -13,7 +13,8 @@ interface Props {
 }
 
 const Model: React.FC<Props> = ({ image, active }) => {
-  const plane = useRef<THREE.Mesh>(null);
+  const plane =
+    useRef<THREE.Mesh<THREE.PlaneGeometry, THREE.ShaderMaterial>>(null);
   const { viewport } = useThree();
   const dimension = useDimension();
   const mouse = useMouse();
@@ -32,18 +33,24 @@ const Model: React.FC<Props> = ({ image, active }) => {
   };
 
   useEffect(() => {
+    if (!plane.current) return;
+
     if (active) {
       plane.current.material.uniforms.uTexture.value = texture;
       animate(opacity, 1, {
         duration: 0.2,
-        onUpdate: (latest) =>
-          (plane.current.material.uniforms.uAlpha.value = latest),
+        onUpdate: (latest) => {
+          if (!plane.current) return;
+          plane.current.material.uniforms.uAlpha.value = latest;
+        },
       });
     } else {
       animate(opacity, 0, {
         duration: 0.2,
-        onUpdate: (latest) =>
-          (plane.current.material.uniforms.uAlpha.value = latest),
+        onUpdate: (latest) => {
+          if (!plane.current) return;
+          plane.current.material.uniforms.uAlpha.value = latest;
+        },
       });
     }
   }, [active]);
@@ -56,6 +63,8 @@ const Model: React.FC<Props> = ({ image, active }) => {
   });
 
   useFrame(() => {
+    if (!plane.current) return;
+
     const { x, y } = mouse;
     const smoothX = smoothMouse.x.get();
     const smoothY = smoothMouse.y.get();
