@@ -128,11 +128,11 @@ export const layersFour: Layer[] = [
         <img src={symbols} alt="symbols" className="mx-auto" />
       </div>
     ),
-    depth: 0.4,
+    depth: 0.5,
   },
   {
     image: nt2,
-    depth: 0.6,
+    depth: 0.65,
   },
   {
     image: nt3,
