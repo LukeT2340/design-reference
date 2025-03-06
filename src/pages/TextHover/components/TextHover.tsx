@@ -1,11 +1,45 @@
-interface Props {
+import { useState } from 'react';
+import Scene from './Scene';
+
+interface TextHoverProps {
+  text: string;
+  color: string;
+  hoverColor: string;
+  image: string;
+  href: string;
+}
+
+const TextHover: React.FC<TextHoverProps> = ({
+  text,
+  color,
+  hoverColor,
+  image,
+  href,
+}) => {
+  // const [menuActive, setMenuActive] = useState<boolean>(true);
+
+  return (
+    <li
+      className="group relative overflow-hidden"
+      // onMouseEnter={() => setMenuActive(true)}
+      // onMouseLeave={() => setMenuActive(false)}
+    >
+      {/* <Scene active={menuActive} image={image} /> */}
+      <Text text={text} color={color} hoverColor={hoverColor} href={href} />
+    </li>
+  );
+};
+
+export default TextHover;
+
+interface TextProps {
   text: string;
   color: string;
   hoverColor: string;
   href: string;
 }
 
-const Text: React.FC<Props> = ({ text, color, hoverColor, href }) => {
+const Text: React.FC<TextProps> = ({ text, color, hoverColor, href }) => {
   const letters = text.split('');
 
   return (
@@ -46,5 +80,3 @@ const Text: React.FC<Props> = ({ text, color, hoverColor, href }) => {
     </a>
   );
 };
-
-export default Text;

@@ -42,7 +42,7 @@ export const setupListener = (
       ? -containerRef.current.getBoundingClientRect().top / window.innerHeight
       : window.scrollY / window.innerHeight;
 
-    const shouldAnimate = normalizedScrollY < 1 && normalizedScrollY > -1;
+    const shouldAnimate = normalizedScrollY < 1.5 && normalizedScrollY > -1;
 
     if (shouldAnimate) {
       layers.forEach((layer) => {
@@ -59,7 +59,7 @@ export const setupListener = (
         position.currentX = lerp(position.currentX, position.targetX, 0.007);
         position.currentY = lerp(position.currentY, position.targetY, 0.007);
 
-        const adjustedScale = 1 + depth * 0.3;
+        const adjustedScale = layer.image ? 1 + depth * 0.3 : 1;
         const scrollOffset = normalizedScrollY * 100 * depth;
         const adjustedPositionY = position.currentY + depth * 15 + scrollOffset;
 

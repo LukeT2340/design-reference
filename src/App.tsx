@@ -19,7 +19,7 @@ const App = () => {
       <main>
         <article>
           <LocomotiveParallax locoScrollRef={locoScrollRef}>
-            <NavBar />
+            {/* <NavBar /> */}
             <BrowserRouter>
               <Routes>
                 <Route path="/slides" element={<Slides />} />

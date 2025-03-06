@@ -95,10 +95,10 @@ const Model: React.FC<Props> = ({ image, active }) => {
     <mesh position-x={x} position-y={y} ref={plane} scale={scale}>
       <planeGeometry args={[1, 1, 15, 15]} />
       <shaderMaterial
-        vertexShader={vertex}
-        fragmentShader={fragment}
+        // vertexShader={vertex}
+        // fragmentShader={fragment}
         uniforms={uniforms.current}
-        transparent={true}
+        // transparent={true}
       />
     </mesh>
   );
