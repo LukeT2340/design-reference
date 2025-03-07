@@ -21,7 +21,7 @@ const Parallax = () => {
       {backgrounds.map((background: Background, index: number) => (
         <React.Fragment key={index}>
           <div
-            className="pointer-events-none relative h-[130vh] w-screen overflow-hidden"
+            className="pointer-events-none relative h-[135vh] w-screen overflow-hidden"
             ref={background.containerRef}
           >
             <ParallaxBackground
@@ -31,7 +31,7 @@ const Parallax = () => {
             <img
               src={shape}
               alt="shape"
-              className="absolute -bottom-[180px] w-full"
+              className="absolute -bottom-[165px] w-full"
             />
           </div>
           <div className="h-screen w-screen" />
